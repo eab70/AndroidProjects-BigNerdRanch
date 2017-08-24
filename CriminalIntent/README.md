@@ -1,2 +1,2 @@
 
-CriminalIntent app up thru Chp 11 with challenges from Chps 9 & 11.
+CriminalIntent app up thru Chp 12 with challenges from Chps 9 & 11.
