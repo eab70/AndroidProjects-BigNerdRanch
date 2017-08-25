@@ -2,6 +2,7 @@ package com.bignerdranch.android.criminalintent;
 
 import android.icu.lang.UCharacterCategory;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,10 +18,12 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private Date mTime;
 
     public Crime() {
         mId = UUID.randomUUID();
         mDate = Calendar.getInstance().getTime();
+        mTime = new Date();
     }
 
     public UUID getId() {
@@ -46,5 +49,9 @@ public class Crime {
     public void setSolved(boolean solved) {
         mSolved = solved;
     }
+
+    public Date getTime() {return mTime; }
+
+    public void setTime(Date time) { mTime = time;}
 
 }

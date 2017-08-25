@@ -82,10 +82,11 @@ public class CrimeListFragment extends Fragment {
         public void bind(Crime crime) {
             mCrime = crime;
             DateFormat dateFormat = android.text.format.DateFormat.getLongDateFormat(getContext());
+            //DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getContext());
             String day = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(mCrime.getDate());
             mTitleTextView.setText(mCrime.getTitle());
-            //mDateTextView.setText(mCrime.getDate().toString());
-            mDateTextView.setText(day+" "+dateFormat.format(mCrime.getDate()));
+            mDateTextView.setText(mCrime.getDate().toString());
+            //mDateTextView.setText(day+" "+dateFormat.format(mCrime.getDate()));  //Code for challenge
             mSolvedImageView.setVisibility(mCrime.isSolved() ? View.VISIBLE : View.GONE);
         }
 
