@@ -100,7 +100,7 @@ public class CrimeFragment extends Fragment {
 
         mTimeButton = (Button) v.findViewById(R.id.crime_time);
         //mTimeButton.setText(mTimeButton.getText());
-        updateDate();  //updateTime()
+        updateDate();  
         mTimeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,14 +144,18 @@ public class CrimeFragment extends Fragment {
         }
 
         if (requestCode == REQUEST_TIME) {
-            Date date = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
-            mCrime.setDate(date);
-            updateDate();
+            Date time = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
+            mCrime.setDate(time);
+            updateTime();
         }
     }
 
     private void updateDate() {
         mDateButton.setText(mCrime.getDate().toString());
+    }
+    
+    private void updateTime() {
+        mDateButton.setText(mCrime.getTime().toString());
     }
 
 }
