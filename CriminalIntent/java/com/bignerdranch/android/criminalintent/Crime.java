@@ -24,6 +24,7 @@ public class Crime {
         mId = UUID.randomUUID();
         mDate = Calendar.getInstance().getTime();
         mTime = new Date();
+        //mTime = Calendar.getInstance().getTime();
     }
 
     public UUID getId() {

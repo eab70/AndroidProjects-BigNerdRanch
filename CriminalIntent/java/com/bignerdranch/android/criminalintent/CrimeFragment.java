@@ -100,7 +100,7 @@ public class CrimeFragment extends Fragment {
 
         mTimeButton = (Button) v.findViewById(R.id.crime_time);
         //mTimeButton.setText(mTimeButton.getText());
-        updateDate();  
+        updateDate();  // updateTime();
         mTimeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +146,7 @@ public class CrimeFragment extends Fragment {
         if (requestCode == REQUEST_TIME) {
             Date time = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
             mCrime.setDate(time);
+            //mCrime.setTime(time);
             updateTime();
         }
     }
@@ -153,11 +154,9 @@ public class CrimeFragment extends Fragment {
     private void updateDate() {
         mDateButton.setText(mCrime.getDate().toString());
     }
-    
-    private void updateTime() {
-        mDateButton.setText(mCrime.getTime().toString());
-    }
 
-}
-    //Currently, the code for the first challenge in Chp 12, above, only allows either the date to be changed and
+    private void updateTime() { mDateButton.setText(mCrime.getTime().toString());}
+
+    //For first challenge in Chp 12, the above code will only allow either the date to be changed and
     //saved or the time to be changed and saved, but not both.
+}
