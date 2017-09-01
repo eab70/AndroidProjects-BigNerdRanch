@@ -21,10 +21,16 @@ public class Crime {
     private Date mTime;
 
     public Crime() {
-        mId = UUID.randomUUID();
-        mDate = Calendar.getInstance().getTime();
+        this(UUID.randomUUID());
+        //mDate = Calendar.getInstance().getTime();
         mTime = new Date();
         //mTime = Calendar.getInstance().getTime();
+    }
+
+    public Crime(UUID id) {
+        mId = id;
+        mDate = new Date();
+        mTime = new Date();
     }
 
     public UUID getId() {

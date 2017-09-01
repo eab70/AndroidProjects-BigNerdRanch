@@ -111,7 +111,9 @@ public class CrimeListFragment extends Fragment {
 
     private void updateSubtitle() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
-        int crimeSize = crimeLab.getCrimes().size();
+        //int crimeCount = crimeLab.getCrimes().size();
+        //String subtitle = getString(R.string.subtitle_format, crimeCount);
+        int crimeSize = crimeLab.getCrimes().size();  //these 3 lines of code for Chp 13 challenge
         String subtitle = getResources()
                 .getQuantityString(R.plurals.subtitle_plural, crimeSize, crimeSize);
 
@@ -131,6 +133,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         }else {
+            mAdapter.setCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
 
@@ -196,5 +199,10 @@ public class CrimeListFragment extends Fragment {
             return mCrimes.size();
         }
 
+        public void setCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
+        }
+
     }
+
 }
