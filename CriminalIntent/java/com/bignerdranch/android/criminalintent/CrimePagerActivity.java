@@ -22,7 +22,9 @@ import static android.R.id.list;
  * Created by eabac on 8/19/2017.
  */
 
-public class CrimePagerActivity extends AppCompatActivity {
+public class CrimePagerActivity extends AppCompatActivity
+    implements CrimeFragment.Callbacks {
+
     private static final String EXTRA_CRIME_ID =
             "com.bignerdranch.android.criminalintent.crime_id";
 
@@ -70,6 +72,10 @@ public class CrimePagerActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onCrimeUpdated(Crime crime) {
+
+    }
 
 // solution for Chp 11 Challenge 2 (but not the bonus)
     public void jumpToFirstPage(View view) {
