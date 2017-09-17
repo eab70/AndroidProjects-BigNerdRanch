@@ -40,10 +40,10 @@ public class CrimeListFragment extends Fragment {
     private boolean mSubtitleVisible;
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
     private Crime mCrime;
-    private Callbacks mCallbacks;
+    //private Callbacks mCallbacks;
 
     //Required interface for hosting activities
-    public interface Callbacks {
+    /*public interface Callbacks {
         void onCrimeSelected(Crime crime);
     }
 
@@ -52,6 +52,7 @@ public class CrimeListFragment extends Fragment {
         super.onAttach(context);
         mCallbacks = (Callbacks) context;
     }
+    */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,11 +89,12 @@ public class CrimeListFragment extends Fragment {
         outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
     }
 
-    @Override
+    /*@Override
     public void onDetach() {
         super.onDetach();
         mCallbacks = null;
     }
+    */
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -113,8 +115,11 @@ public class CrimeListFragment extends Fragment {
             case R.id.new_crime:
                 Crime crime = new Crime();
                 CrimeLab.get(getActivity()).addCrime(crime);
-                updateUI();
-                mCallbacks.onCrimeSelected(crime);
+                Intent intent = CrimePagerActivity
+                        .newIntent(getActivity(), crime.getId());
+                startActivity(intent);
+                //updateUI();
+                //mCallbacks.onCrimeSelected(crime);
                 return true;
             case R.id.show_subtitle:
                 mSubtitleVisible = !mSubtitleVisible;
@@ -185,7 +190,9 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            mCallbacks.onCrimeSelected(mCrime);
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
+            startActivity(intent);
+            //mCallbacks.onCrimeSelected(mCrime);
         }
     }
 

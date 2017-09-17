@@ -7,20 +7,22 @@ import android.support.v4.app.Fragment;
  * Created by eabac on 7/24/2017.
  */
 
-public class CrimeListActivity extends SingleFragmentActivity
-    implements CrimeListFragment.Callbacks, CrimeFragment.Callbacks {
+public class CrimeListActivity extends SingleFragmentActivity {
+    ///implements CrimeListFragment.Callbacks, CrimeFragment.Callbacks {
 
     @Override
     protected Fragment createFragment() {
         return new CrimeListFragment();
     }
 
-    @Override
+    /*@Override
     protected int getLayoutResId() {
         return R.layout.activity_masterdetail;
     }
+    */
 
-    @Override
+
+    /*@Override
     public void onCrimeSelected(Crime crime) {
         if (findViewById(R.id.detail_fragment_container) == null) {
             Intent intent = CrimePagerActivity.newIntent(this, crime.getId());
@@ -32,11 +34,13 @@ public class CrimeListActivity extends SingleFragmentActivity
                     .commit();
         }
     }
+    */
 
-    public void onCrimeUpdated(Crime crime) {
+    /*public void onCrimeUpdated(Crime crime) {
         CrimeListFragment listFragment = (CrimeListFragment)
                 getSupportFragmentManager()
                         .findFragmentById(R.id.fragment_container);
         listFragment.updateUI();
     }
+    */
 }
