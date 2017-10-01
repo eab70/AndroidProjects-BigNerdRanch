@@ -1,1 +1,1 @@
-BeatBox app thru Chp 23.
+BeatBox app final (with 9-patch images).
