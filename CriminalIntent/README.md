@@ -1,2 +1,2 @@
 
-CriminalIntent app including Challenges from Chps 9, 11, 12 (first challenge), 13 (second challenge), 14, & 15 (first challenge). Note: code for Chp 17 commented out.
+CriminalIntent app final, with Challenges from Chps 9, 11, 12 (first challenge), 13 (second challenge), 14, & 15 (first challenge). Note: code for Chp 17 commented out.
