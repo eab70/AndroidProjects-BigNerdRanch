@@ -1,1 +1,1 @@
-PhotoGallery app thru Chp 25
+PhotoGallery app thru Chp 26.
