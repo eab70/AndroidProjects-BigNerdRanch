@@ -1,1 +1,1 @@
-Nerd Launcher app from Chp 24.
+Nerd Launcher app.
