@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        tools:layout_constraintBottom_toBottomOf="@id/parent"
+        tools:layout_constraintLeft_toLeftOf="@id/parent"
+        tools:layout_constraintTop_toTopOf="@+id/parent"
+        tools:layout_constraintRight_toRightOf="@id/parent"
+        tools:layout_constraintTop_toBottomOf="@id/progress_bar"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:layout_constraintBottom_toBottomOf="@id/parent"
+        tools:layout_constraintLeft_toLeftOf="@id/parent"
+        tools:layout_constraintTop_toTopOf="@+id/parent"
+        tools:layout_constrintRight_toRightOf="@id/parent"
+        tools:visibility="visible"/>
+
+</android.support.constraint.ConstraintLayout>
