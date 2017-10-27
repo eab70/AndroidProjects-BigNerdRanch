@@ -3,6 +3,7 @@ package com.bignerdranch.android.sunset;
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -51,7 +52,7 @@ public class SunsetFragment extends Fragment {
                 if (showingSky) {
                     startAnimation();
                 } else {
-                startAnimation2();
+                    startAnimation2();
                 }
             }
         });
@@ -61,9 +62,9 @@ public class SunsetFragment extends Fragment {
 
     private void startAnimation() {
         float sunYStart = mSunView.getTop();
-        float sunYEnd = mSkyView.getHeight();
+        float sunYEnd = mSkyView.getHeight() + 15;
 
-        ObjectAnimator  heightAnimator = ObjectAnimator
+        ObjectAnimator heightAnimator = ObjectAnimator
                 .ofFloat(mSunView, "y", sunYStart, sunYEnd)
                 .setDuration(3000);
         heightAnimator.setInterpolator(new AccelerateInterpolator());
@@ -78,6 +79,14 @@ public class SunsetFragment extends Fragment {
                 .setDuration(1500);
         nightSkyAnimator.setEvaluator(new ArgbEvaluator());
 
+        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(mSunView,
+                PropertyValuesHolder.ofFloat("scaleX", 1.1f),
+                PropertyValuesHolder.ofFloat("scaleY", 1.1f));
+        scaleDown.setDuration(700);
+        scaleDown.setRepeatCount(ObjectAnimator.INFINITE);
+        scaleDown.setRepeatMode(ObjectAnimator.REVERSE);
+        scaleDown.start();
+
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet
                 .play(heightAnimator)
@@ -89,11 +98,11 @@ public class SunsetFragment extends Fragment {
         showingSky = false;
     }
 
-   private void startAnimation2() {
+    private void startAnimation2() {
         float sunYStart = mSunView.getTop();
         float sunYEnd = mSkyView.getHeight();
 
-        ObjectAnimator  heightAnimator = ObjectAnimator
+        ObjectAnimator heightAnimator = ObjectAnimator
                 .ofFloat(mSunView, "y", sunYEnd, sunYStart)
                 .setDuration(3000);
         heightAnimator.setInterpolator(new AccelerateInterpolator());
@@ -116,6 +125,7 @@ public class SunsetFragment extends Fragment {
         animatorSet1.start();
         heightAnimator.start();
         sunriseSkyAnimator.start();
-       showingSky = true;
+        showingSky = true;
     }
+
 }
