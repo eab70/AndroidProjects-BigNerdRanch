@@ -1,1 +1,1 @@
-Locatr app (thru Chp 34.12)
+Locatr app.
