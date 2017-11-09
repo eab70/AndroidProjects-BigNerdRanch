@@ -1,3 +1,3 @@
 # AndroidProjects-BigNerdRanch
 
-Projects created while learning from "Android Programming: The Big Nerd Ranch Guide" (3rd ed).
+The 8 app projects created while learning from "Android Programming: The Big Nerd Ranch Guide" (3rd ed).
